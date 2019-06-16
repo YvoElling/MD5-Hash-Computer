@@ -38,27 +38,32 @@ func generateString(generatorData genData) (result string) {
 
 //Starts the string generation procedure
 //function should be called first in the string generation method
-func generateStringStart() {
+func generateStringStart() (generatedString string){
 
+	return
 }
 
 //This function is called maxWordLengthCount times
-func generateStringRecurse() {
+func generateStringRecurse(tempString string){
 
+	return
 }
 
 //This function is used to terminate the string generation process once maxWordLengthCount has been reached
-func generateStringBase() {
+func generateStringBase( returnString string){
 
+	return
 }
 
 //Initialize workers
 func createWorkers( nrofworker int) bool{
 
+	return true
 }
 
 //Send a job to a node
 //receive an integer with the amount of hits the worker made
 func sendJob( job job) int{
 
+	return 0
 }
