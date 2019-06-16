@@ -6,8 +6,8 @@ type ascii int
 type workers int
 type maxWordLength int
 
-//generatorData struct definition
-type generatorData struct {
+//GeneratorData struct definition
+type GeneratorData struct {
 	minAscii ascii
 	maxAscii ascii
 	nrofworkers workers
@@ -15,23 +15,23 @@ type generatorData struct {
 }
 
 //getter for amount of workers
-func (generatorData *generatorData) getNrofworkers() workers {
+func (generatorData *GeneratorData) getNrofworkers() workers {
 	return (*generatorData).nrofworkers
 }
 
 //getter for minimal ascii number
-func (generatorData *generatorData) getMinAscii() ascii {
+func (generatorData *GeneratorData) getMinAscii() ascii {
 	return (*generatorData).minAscii
 }
 
 
 //getter for maximum ascii number
-func (generatorData *generatorData) getMaxAscii() ascii {
+func (generatorData *GeneratorData) getMaxAscii() ascii {
 	return (*generatorData).maxAscii
 }
 
 
 //getter for maximum length of word
-func (generatorData *generatorData) getMaxWordLength() maxWordLength {
+func (generatorData *GeneratorData) getMaxWordLength() maxWordLength {
 	return (*generatorData).maxWordLength
 }
