@@ -7,7 +7,7 @@ func inputParserMain() {
 
 }
 
-//retrieve file data
+//retrieve file data from input file
 func getFileData() (data []byte){
 
 	return
