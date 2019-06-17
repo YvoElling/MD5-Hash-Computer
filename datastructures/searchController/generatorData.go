@@ -2,36 +2,36 @@
 package searchController
 
 //typedefs for readability
-type ascii int
-type workers int
-type maxWordLength int
+type Ascii int
+type Workers int
+type MaxWordLength int
 
 //GeneratorData struct definition
 type GeneratorData struct {
-	minAscii ascii
-	maxAscii ascii
-	nrofworkers workers
-	maxWordLength maxWordLength
+	minAscii Ascii
+	maxAscii Ascii
+	nrofworkers Workers
+	maxWordLength MaxWordLength
 }
 
 //getter for amount of workers
-func (generatorData *GeneratorData) getNrofworkers() workers {
+func (generatorData *GeneratorData) GetNrofworkers() Workers {
 	return (*generatorData).nrofworkers
 }
 
 //getter for minimal ascii number
-func (generatorData *GeneratorData) getMinAscii() ascii {
+func (generatorData *GeneratorData) GetMinAscii() Ascii {
 	return (*generatorData).minAscii
 }
 
 
 //getter for maximum ascii number
-func (generatorData *GeneratorData) getMaxAscii() ascii {
+func (generatorData *GeneratorData) GetMaxAscii() Ascii {
 	return (*generatorData).maxAscii
 }
 
 
 //getter for maximum length of word
-func (generatorData *GeneratorData) getMaxWordLength() maxWordLength {
+func (generatorData *GeneratorData) GetMaxWordLength() MaxWordLength {
 	return (*generatorData).maxWordLength
 }
