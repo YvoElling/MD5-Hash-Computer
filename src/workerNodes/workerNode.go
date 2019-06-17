@@ -16,7 +16,7 @@ const (
 )
 
 //function that request a new Job from the masterNode
-func getNewJob( job Job) {
+func GetNewJob( job Job) {
 
 }
 
