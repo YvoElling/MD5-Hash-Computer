@@ -8,30 +8,30 @@ type MaxWordLength int
 
 //GeneratorData struct definition
 type GeneratorData struct {
-	MinAscii Ascii
-	MaxAscii Ascii
-	Nrofworkers Workers
-	MaxWordLength MaxWordLength
+	minAscii Ascii
+	maxAscii Ascii
+	nrofworkers Workers
+	maxWordLength MaxWordLength
 }
 
 //getter for amount of workers
 func (generatorData *GeneratorData) GetNrofworkers() Workers {
-	return (*generatorData).Nrofworkers
+	return (*generatorData).nrofworkers
 }
 
 //getter for minimal ascii number
 func (generatorData *GeneratorData) GetMinAscii() Ascii {
-	return (*generatorData).MinAscii
+	return (*generatorData).minAscii
 }
 
 
 //getter for maximum ascii number
 func (generatorData *GeneratorData) GetMaxAscii() Ascii {
-	return (*generatorData).MaxAscii
+	return (*generatorData).maxAscii
 }
 
 
 //getter for maximum length of word
 func (generatorData *GeneratorData) GetMaxWordLength() MaxWordLength {
-	return (*generatorData).MaxWordLength
+	return (*generatorData).maxWordLength
 }
