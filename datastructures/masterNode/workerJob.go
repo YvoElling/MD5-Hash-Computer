@@ -4,19 +4,18 @@ package masterNode
 import "MD5-Hash-Computer/datastructures/searchController"
 
 //typdefs for readability
-type job string
 type wrapperMD5 *searchController.WrapperMD5
 
 //workerJob struct
 //This struct includes all data that is sent from the masterNode to the workerNode
 type WorkerJob struct {
-	job job
+	job string
 	wrapperArray []wrapperMD5
 	lastJob bool
 }
 
 //retuns the string that is to be hashed by the worker
-func (workerJob *WorkerJob) getJob() job {
+func (workerJob *WorkerJob) getJob() string {
 	return (*workerJob).job
 }
 
