@@ -5,36 +5,36 @@ import (
 	"MD5-Hash-Computer/datastructures/searchController"
 )
 
-type wrapper *searchController.WrapperMD5
-type genData *searchController.GeneratorData
-type job *masterNode.WorkerJob
+//Type aliases for code readability
+type wrapper = *searchController.WrapperMD5
+type generatorData = *searchController.GeneratorData
+type job = *masterNode.WorkerJob
 
 //receives input from the SearchController
 //Forwards received data to MasterNodeMain (the master node control flow)
-func ToMasterNode( wrapperArray []wrapper, generatorData genData) bool{
+func ToMasterNode( wrapperArray []wrapper, generatorData generatorData) bool{
 
 	return true
 }
 
 //Receives input data from 'ToMasterNode' function
 //start the control flow from the master node
-func masterNodeMain( wrapperArray []wrapper, generatorData genData) bool{
+func masterNodeMain( wrapperArray []wrapper, generatorData generatorData) bool{
 
 	return true
 }
 
 //returns the amount of workers of type integer
-func getNrofWorkers ( generatorData genData) int {
+func getNrofWorkers ( generatorData generatorData) int {
 
 	return 0
 }
 
 //Returns a string that was generated
-func generateString(generatorData genData) (result string) {
+func generateString(generatorData generatorData) (result string) {
 
 	return
 }
-
 
 //Starts the string generation procedure
 //function should be called first in the string generation method
