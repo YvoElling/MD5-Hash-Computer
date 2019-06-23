@@ -6,7 +6,7 @@ import (
 )
 
 //typedef for readability
-type output searchController.WrapperMD5
+type output = searchController.WrapperMD5
 
 //resultHandler object class
 //This is an MD5 wrapper as declared before
