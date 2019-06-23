@@ -3,66 +3,94 @@ package inputParser
 
 
 // typedefs for code readability
-type day int
-type month int
-type year int
-type name string
-type filename string
-type workers int
-type ascii int
-type maxWordLength int
+type Day int
+type Month int
+type Year int
+type Name string
+type Filename string
+type Workers int
+type Ascii int
+type MaxWordLength int
 
-// date struct that is used for printing out the correct date in the output file
-type date struct {
-	Day day
-	Month month
-	Year year
+// Date struct that is used for printing out the correct Date in the output file
+type Date struct {
+	Day Day
+	Month Month
+	Year Year
 }
 
 // metadata struct that is used for the output file and the masterNode
 type Metadata struct {
-	date date
-	name name
-	nrofworkers workers
-	fileName filename
-	minAscii ascii
-	maxAscii ascii
-	maxWordLength maxWordLength
+	date          Date
+	name          Name
+	nrofworkers   Workers
+	fileName      Filename
+	minAscii      Ascii
+	maxAscii      Ascii
+	maxWordLength MaxWordLength
 }
 
-//getter for date
-func (metadata *Metadata) getDate() date {
+func (metadata *Metadata) SetMaxWordLength(maxWordLength MaxWordLength) {
+	metadata.maxWordLength = maxWordLength
+}
+
+func (metadata *Metadata) SetMaxAscii(maxAscii Ascii) {
+	metadata.maxAscii = maxAscii
+}
+
+func (metadata *Metadata) SetMinAscii(minAscii Ascii) {
+	metadata.minAscii = minAscii
+}
+
+func (metadata *Metadata) SetFileName(fileName Filename) {
+	metadata.fileName = fileName
+}
+
+func (metadata *Metadata) SetNrofworkers(nrofworkers Workers) {
+	metadata.nrofworkers = nrofworkers
+}
+
+func (metadata *Metadata) SetName(name Name) {
+	metadata.name = name
+}
+
+func (metadata *Metadata) SetDate(date Date) {
+	metadata.date = date
+}
+
+//getter for Date
+func (metadata *Metadata) getDate() Date {
 	return (*metadata).date
 }
 
 //getter for name
-func (metadata *Metadata) getName() name {
+func (metadata *Metadata) getName() Name {
 	return (*metadata).name
 }
 
 //getter for amount of workers
-func (metadata *Metadata) getNrofworkers() workers {
+func (metadata *Metadata) getNrofworkers() Workers {
 	return (*metadata).nrofworkers
 }
 
 //getter for output file name
-func (metadata *Metadata) getFilename() filename {
+func (metadata *Metadata) getFilename() Filename {
 	return (*metadata).fileName
 }
 
 //getter for minimal ascii number
-func (metadata *Metadata) getMinAscii() ascii {
+func (metadata *Metadata) getMinAscii() Ascii {
 	return (*metadata).minAscii
 }
 
 
 //getter for maximum ascii number
-func (metadata *Metadata) getMaxAscii() ascii {
+func (metadata *Metadata) getMaxAscii() Ascii {
 	return  (*metadata).maxAscii
 }
 
 
 //getter for maximum length of word
-func (metadata *Metadata) getMaxWordLength() maxWordLength {
+func (metadata *Metadata) getMaxWordLength() MaxWordLength {
 	return  (*metadata).maxWordLength
 }
