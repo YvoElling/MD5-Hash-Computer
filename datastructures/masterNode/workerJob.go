@@ -15,16 +15,16 @@ type WorkerJob struct {
 }
 
 //retuns the string that is to be hashed by the worker
-func (workerJob *WorkerJob) getJob() string {
-	return (*workerJob).job
+func (this *WorkerJob) getJob() string {
+	return (*this).job
 }
 
 //returns an array of wrapperMD5 objects
-func (workerJob *WorkerJob) getWrapperArray() []wrapperMD5{
-	return (*workerJob).wrapperArray
+func (this *WorkerJob) getWrapperArray() []wrapperMD5{
+	return (*this).wrapperArray
 }
 
 //returns whether or not this was the final job
-func (WorkerJob *WorkerJob) isLastJob() bool  {
-	return (*WorkerJob).lastJob
+func (this *WorkerJob) isLastJob() bool  {
+	return (*this).lastJob
 }
