@@ -104,7 +104,7 @@ func evalFileData( data []string) (md5Array []inputParser.HashMD5Struct){
 			}
 
 			//If the data is a comment, then we can disregard it
-		} else if !isComment(stringData) {
+		} else if !isComment(stringData) && len(stringData) > 0 {
 			//create an inputParser.HashM5 object
 			var hashMd5Object inputParser.HashMD5Struct
 			//store string data in MD5 object.
