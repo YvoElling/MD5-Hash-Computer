@@ -1,9 +1,7 @@
 package inputParser
 
-var path string = "input.txt"
-
 //Start the input parser process
-func inputParserMain() {
+func InputParserMain(path string) {
 
 }
 
