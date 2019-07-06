@@ -1,0 +1,14 @@
+25/06/2019
+Yvo Elling
+1
+output.txt
+88
+120
+5
+
+#This means 'hash'
+0800FC577294C34E0B28AD2839435945
+
+
+#This means 'md5'
+1BC29B36F623BA82AAF6724FD3B16718
