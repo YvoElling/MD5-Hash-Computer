@@ -59,38 +59,38 @@ func (metadata *Metadata) SetDate(date Date) {
 }
 
 //getter for Date
-func (metadata *Metadata) getDate() Date {
+func (metadata *Metadata) GetDate() Date {
 	return (*metadata).date
 }
 
 //getter for name
-func (metadata *Metadata) getName() Name {
+func (metadata *Metadata) GetName() Name {
 	return (*metadata).name
 }
 
 //getter for amount of workers
-func (metadata *Metadata) getNrofworkers() Workers {
+func (metadata *Metadata) GetNrofworkers() Workers {
 	return (*metadata).nrofworkers
 }
 
 //getter for output file name
-func (metadata *Metadata) getFilename() Filename {
+func (metadata *Metadata) GetFilename() Filename {
 	return (*metadata).fileName
 }
 
 //getter for minimal ascii number
-func (metadata *Metadata) getMinAscii() Ascii {
+func (metadata *Metadata) GetMinAscii() Ascii {
 	return (*metadata).minAscii
 }
 
 
 //getter for maximum ascii number
-func (metadata *Metadata) getMaxAscii() Ascii {
+func (metadata *Metadata) GetMaxAscii() Ascii {
 	return  (*metadata).maxAscii
 }
 
 
 //getter for maximum length of word
-func (metadata *Metadata) getMaxWordLength() MaxWordLength {
+func (metadata *Metadata) GetMaxWordLength() MaxWordLength {
 	return  (*metadata).maxWordLength
 }

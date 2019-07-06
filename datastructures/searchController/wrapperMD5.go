@@ -11,6 +11,14 @@ type WrapperMD5 struct {
 	correspondingStrings []string
 }
 
+func (wrapperMD5 *WrapperMD5) SetHashMD5(hashMD5 inputParser.HashMD5Struct) {
+	wrapperMD5.hashMD5 = hashMD5
+}
+
+func (WrapperMD5 *WrapperMD5) AddString(newString string) {
+	WrapperMD5.correspondingStrings = append(WrapperMD5.correspondingStrings, newString)
+}
+
 //returns the hash value
 func (wrapperMD5 *WrapperMD5) getHashMD5Object() inputParser.HashMD5Struct {
 	return (*wrapperMD5).hashMD5
