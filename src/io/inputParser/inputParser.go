@@ -44,6 +44,23 @@ func getFileData() (md5Array []inputParser.HashMD5Struct){
 	return md5Array
 }
 
+//Takes an arbitrary amount of uint8 integers and computes the integer (data values) from it
+func getValue(args ...uint8) (value int){
+	var data []string
+	//iterate over all argument and convert to string
+	for _, val := range args {
+		data = append(data, string(val))
+	}
+	//concentenate all value in string slice
+	tempString := strings.Join(data, "")
+	//convert all strings to integers
+	value, err := strconv.Atoi(tempString)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return
+}
+
 //evaluates file data
 func evalFileData( data []string) (md5Array []inputParser.HashMD5Struct){
 	//create metadata object to forward to outputHandler
@@ -51,14 +68,14 @@ func evalFileData( data []string) (md5Array []inputParser.HashMD5Struct){
 
 	//iterate over the created string slice
 	for i, stringData := range data {
-		//if the index value is less than 6, this means that this data is metadat
+		//if the index value is less than 6, this means that this data is metadata
 		if i < 7 {
 			switch i {
 			case 0:
 				//index nr 1: The date
-				day := inputParser.Day(stringData[0] + stringData[1])
-				month := inputParser.Month(stringData[3] + stringData[4])
-				year := inputParser.Year(stringData[6] + stringData[7] + stringData[8] + stringData[9])
+				day := inputParser.Day(getValue(stringData[0], stringData[1]))
+				month := inputParser.Month(getValue(stringData[3], stringData[4]))
+				year := inputParser.Year(getValue(stringData[6], stringData[7], stringData[8], stringData[9]))
 				date := inputParser.Date{Day: day, Month: month, Year: year}
 				MetaData.SetDate(date)
 			case 1:
