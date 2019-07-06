@@ -3,7 +3,6 @@ package inputParser
 import (
 	"MD5-Hash-Computer/datastructures/inputParser"
 	"bufio"
-	"fmt"
 	"log"
 	"os"
 	"path/filepath"
@@ -14,15 +13,13 @@ import (
 var path, _ = filepath.Abs("input.txt")
 
 //Start the input parser process
-func InputParserMain() {
-	md5array := getFileData()
-	for _, value := range md5array {
-		fmt.Println(string(value.GetHash()))
-	}
+func InputParserMain() (md5array []inputParser.HashMD5Struct, metadata inputParser.Metadata){
+	md5array, metadata = getFileData()
+	return
 }
 
 //retrieve file data from input file
-func getFileData() (md5Array []inputParser.HashMD5Struct){
+func getFileData() (md5Array []inputParser.HashMD5Struct, metadata inputParser.Metadata){
 	//opens a connection to the input file
 	var file, e =  os.Open(path)
 	defer func() {
@@ -39,9 +36,9 @@ func getFileData() (md5Array []inputParser.HashMD5Struct){
 	data := storeInObject(file)
 	
 	//evaluate the content
-	md5Array = evalFileData(data)
+	md5Array, metadata = evalFileData(data)
 
-	return md5Array
+	return
 }
 
 //Takes an arbitrary amount of uint8 integers and computes the integer (data values) from it
@@ -62,9 +59,7 @@ func getValue(args ...uint8) (value int){
 }
 
 //evaluates file data
-func evalFileData( data []string) (md5Array []inputParser.HashMD5Struct){
-	//create metadata object to forward to outputHandler
-	var MetaData inputParser.Metadata
+func evalFileData( data []string) (md5Array []inputParser.HashMD5Struct, MetaData inputParser.Metadata){
 
 	//iterate over the created string slice
 	for i, stringData := range data {
@@ -131,7 +126,7 @@ func evalFileData( data []string) (md5Array []inputParser.HashMD5Struct){
 		}
 	}
 	//return the MD5 array
-	return md5Array
+	return
 }
 
 //checks if data is comment
