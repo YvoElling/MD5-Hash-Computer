@@ -25,19 +25,19 @@ func InputParserMain() {
 func getFileData() (md5Array []inputParser.HashMD5Struct){
 	//opens a connection to the input file
 	var file, e =  os.Open(path)
+	defer func() {
+		err := file.Close()
+		if err != nil {
+			log.Fatal(err)
+		}
+	}()
 	if e != nil {
 		log.Fatal(e)
 	}
 
 	//stores the data from the file in the data string slice
 	data := storeInObject(file)
-
-	//closes the file after operation
-	err := file.Close()
-	if err != nil {
-		log.Fatal(e)
-	}
-
+	
 	//evaluate the content
 	md5Array = evalFileData(data)
 
