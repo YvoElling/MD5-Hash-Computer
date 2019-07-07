@@ -2,7 +2,8 @@ package main
 
 import (
 	"MD5-Hash-Computer/src/io/inputParser"
-	searchController2 "MD5-Hash-Computer/src/searchController"
+	"MD5-Hash-Computer/src/masterNode"
+	"MD5-Hash-Computer/src/searchController"
 )
 
 //Main control flow function
@@ -13,5 +14,6 @@ func main() {
 
 func run() {
 	data, metadata := inputParser.InputParserMain()
-	searchController2.SearchControllerMain(data, metadata)
+	wrapperObject, genObject := searchController.SearchControllerMain(data, metadata)
+	masterNode.ToMasterNode(wrapperObject, genObject)
 }
